@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/SpoonLabs/spoon-examples.svg?branch=master)](https://travis-ci.org/SpoonLabs/spoon-examples)
+
 # Spoon Examples
 
 ## Introduction
