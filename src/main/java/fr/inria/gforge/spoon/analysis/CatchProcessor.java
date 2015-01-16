@@ -1,4 +1,4 @@
-package fr.inria.gforge.spoon.analysis.processing;
+package fr.inria.gforge.spoon.analysis;
 
 import spoon.processing.AbstractProcessor;
 import spoon.processing.Severity;

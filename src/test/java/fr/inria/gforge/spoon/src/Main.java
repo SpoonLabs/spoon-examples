@@ -1,6 +1,6 @@
-package fr.inria.gforge.spoon.analysis.src;
+package fr.inria.gforge.spoon.src;
 
-import fr.inria.gforge.spoon.analysis.src.p3.C;
+import fr.inria.gforge.spoon.src.p3.C;
 
 import java.util.Vector;
 

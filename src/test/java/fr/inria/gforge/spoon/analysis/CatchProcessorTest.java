@@ -1,5 +1,6 @@
-package fr.inria.gforge.spoon.analysis.processing;
+package fr.inria.gforge.spoon.analysis;
 
+import fr.inria.gforge.spoon.analysis.CatchProcessor;
 import org.junit.Test;
 import spoon.Launcher;
 import spoon.processing.ProcessingManager;
@@ -14,8 +15,13 @@ import static org.junit.Assert.assertEquals;
 public class CatchProcessorTest {
 	@Test
 	public void testCatchProcessor() throws Exception {
+		final String[] args = {
+				"-i", "src/test/java/fr/inria/gforge/spoon/src/",
+				"-o", "target/spooned/"
+		};
+
 		final Launcher launcher = new Launcher();
-		launcher.addInputResource(new FileSystemFolder(new File("src/main/java/fr/inria/gforge/spoon/analysis/src/")));
+		launcher.setArgs(args);
 		launcher.run();
 
 		final Factory factory = launcher.getFactory();
