@@ -1,0 +1,27 @@
+package fr.inria.gforge.spoon.src;
+
+import fr.inria.gforge.spoon.src.p3.C;
+
+import java.util.Vector;
+
+public class Main {
+	public static void main(String[] args) {
+		try {
+			@SuppressWarnings("unused")
+			Vector<?> v = null;
+			m1();
+		} catch (Exception ignored) {
+		}
+	}
+
+	public static void m1() throws Exception {
+		m2();
+	}
+
+	public static void m2() throws Exception {
+		throw new RuntimeException();
+	}
+
+	public void m(C c) throws Exception {
+	}
+}
