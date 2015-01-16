@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 
 public class CatchProcessorTest {
 	@Test
-	public void test() throws Exception {
+	public void testCatchProcessor() throws Exception {
 		final Launcher launcher = new Launcher();
 		launcher.addInputResource(new FileSystemFolder(new File("src/main/java/fr/inria/gforge/spoon/analysis/src/")));
 		launcher.run();
