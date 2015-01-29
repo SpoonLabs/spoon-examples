@@ -16,7 +16,7 @@ public class CatchProcessorTest {
 	@Test
 	public void testCatchProcessor() throws Exception {
 		final String[] args = {
-				"-i", "src/test/java/fr/inria/gforge/spoon/src/",
+				"-i", "src/test/resources/src/",
 				"-o", "target/spooned/"
 		};
 
