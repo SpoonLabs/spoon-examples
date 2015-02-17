@@ -1,4 +1,4 @@
-package fr.inria.gforge.spoon.transformations;
+package fr.inria.gforge.spoon.transformation;
 
 import org.eclipse.jdt.internal.compiler.batch.Main;
 import org.junit.Test;
@@ -12,9 +12,9 @@ public class NotNullCheckAdderProcessorTest {
 	@Test
 	public void testCompileSourceCodeAfterProcessSourceCodeWithNotNullCheckAdderProcessor() throws Exception {
 		final String[] args = {
-				"-i", "src/test/java/fr/inria/gforge/spoon/src/",
+				"-i", "src/test/resources/src/",
 				"-o", "target/spooned/",
-				"-p", "fr.inria.gforge.spoon.transformations.NotNullCheckAdderProcessor"
+				"-p", "fr.inria.gforge.spoon.transformation.NotNullCheckAdderProcessor"
 		};
 
 		final Launcher launcher = new Launcher();
