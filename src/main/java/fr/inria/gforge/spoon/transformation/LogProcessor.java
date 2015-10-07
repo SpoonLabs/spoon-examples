@@ -7,7 +7,6 @@ import spoon.reflect.declaration.CtExecutable;
 
 public class LogProcessor extends AbstractProcessor<CtExecutable> {
 
-	@Override
 	public void process(CtExecutable element) {
 		CtCodeSnippetStatement snippet = getFactory().Core().createCodeSnippetStatement();
 
