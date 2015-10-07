@@ -2,7 +2,6 @@ package fr.inria.gforge.spoon.analysis;
 
 import org.apache.log4j.Level;
 import spoon.processing.AbstractProcessor;
-import spoon.processing.Severity;
 import spoon.reflect.code.CtCatch;
 
 import java.util.ArrayList;
@@ -19,6 +18,7 @@ public class CatchProcessor extends AbstractProcessor<CtCatch> {
 		return candidate.getBody().getStatements().size() == 0;
 	}
 
+	@Override
 	public void process(CtCatch element) {
 		getEnvironment().report(this, Level.WARN, element, "empty catch clause");
 		emptyCatchs.add(element);
