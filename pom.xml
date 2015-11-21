@@ -12,15 +12,13 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    <spoon.version>4.3.0</spoon.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>fr.inria.gforge.spoon</groupId>
       <artifactId>spoon-core</artifactId>
-      <version>${spoon.version}</version>
+      <version>4.4.0</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
