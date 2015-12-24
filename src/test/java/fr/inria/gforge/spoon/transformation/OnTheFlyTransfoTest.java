@@ -29,7 +29,7 @@ public class OnTheFlyTransfoTest {
 	  l.addInputResource("src/test/resources/");
 	  l.buildModel();
 	  
-	  CtClass foo = (CtClass) l.getFactory().Package().getRootPackage().getElements(new NameFilter("Foo")).get(0);
+	  CtClass foo = (CtClass) l.getFactory().Package().getRootPackage().getElements(new NameFilter("Foo1")).get(0);
 
 	  // compiling and testing the initial class
 	  Class<?> fooClass = InMemoryJavaCompiler.compile(foo.getQualifiedName(), "package "+foo.getPackage().getQualifiedName()+";"+foo.toString());
