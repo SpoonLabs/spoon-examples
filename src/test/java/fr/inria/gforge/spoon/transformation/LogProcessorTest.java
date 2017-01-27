@@ -14,13 +14,12 @@ public class LogProcessorTest {
 		final String[] args = {
 				"-i", "src/test/resources/src/",
 				"-o", "target/spooned/",
-				"-p", "fr.inria.gforge.spoon.transformation.LogProcessor"
+				"-p", "fr.inria.gforge.spoon.transformation.LogProcessor",
+				"--compile"
 		};
 
 		final Launcher launcher = new Launcher();
 		launcher.setArgs(args);
 		launcher.run();
-
-		assertTrue(Main.compile(Main.tokenize("-1.6 target/spooned/"), new PrintWriter(System.out), new PrintWriter(System.err), null));
 	}
 }
