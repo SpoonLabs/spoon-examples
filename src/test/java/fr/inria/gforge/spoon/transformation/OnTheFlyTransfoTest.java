@@ -26,7 +26,7 @@ public class OnTheFlyTransfoTest {
 	  // required for having IFoo.class in the classpath in Maven
 	  l.setArgs(new String[] {"--source-classpath","target/test-classes"});
 	  
-	  l.addInputResource("src/test/resources/");
+	  l.addInputResource("src/test/resources/transformation/");
 	  l.buildModel();
 	  
 	  CtClass foo = (CtClass) l.getFactory().Package().getRootPackage().getElements(new NameFilter("Foo1")).get(0);

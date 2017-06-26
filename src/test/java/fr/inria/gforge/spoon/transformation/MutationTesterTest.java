@@ -21,7 +21,7 @@ public class MutationTesterTest {
 		// 1. the code to be mutated
 		// 2. the test driver to kill the mutants 
 		// 3. the mutation operator
-		String codeToBeMutated = "src/test/resources/fr/inria/gforge/spoon/transformation/Foo2.java";
+		String codeToBeMutated = "src/test/resources/transformation/fr/inria/gforge/spoon/transformation/Foo2.java";
 		
 		TestDriver<IFoo> testDriverForIFooObjects = new TestDriver<IFoo>() {
 			@Override
