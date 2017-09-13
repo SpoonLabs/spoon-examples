@@ -4,13 +4,9 @@ import org.junit.Test;
 import spoon.Launcher;
 import spoon.processing.ProcessingManager;
 import spoon.reflect.code.CtConstructorCall;
-import spoon.reflect.code.CtNewClass;
-import spoon.reflect.declaration.CtClass;
-import spoon.reflect.declaration.CtElement;
 import spoon.reflect.declaration.CtInterface;
-import spoon.reflect.declaration.CtNamedElement;
 import spoon.reflect.factory.Factory;
-import spoon.reflect.visitor.filter.NameFilter;
+import spoon.reflect.visitor.filter.NamedElementFilter;
 import spoon.reflect.visitor.filter.TypeFilter;
 import spoon.support.QueueProcessingManager;
 
@@ -33,7 +29,7 @@ public class FactoryProcessorTest {
 
 		final Factory factory = launcher.getFactory();
 		final ProcessingManager processingManager = new QueueProcessingManager(factory);
-		List<CtInterface> listFactoryItf = factory.getModel().getElements(new NameFilter<CtInterface>("Factory"));
+		List<CtInterface> listFactoryItf = factory.getModel().getElements(new NamedElementFilter<>(CtInterface.class, "Factory"));
 		assertThat(listFactoryItf.size(), is(1));
 
 		final FactoryProcessor processor = new FactoryProcessor(listFactoryItf.get(0).getReference());

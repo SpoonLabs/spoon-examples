@@ -6,12 +6,11 @@ import org.junit.Test;
 import org.mdkt.compiler.InMemoryJavaCompiler;
 
 import spoon.Launcher;
-import spoon.SpoonAPI;
 import spoon.reflect.code.BinaryOperatorKind;
 import spoon.reflect.code.CtBinaryOperator;
 import spoon.reflect.declaration.CtClass;
 import spoon.reflect.visitor.Filter;
-import spoon.reflect.visitor.filter.NameFilter;
+import spoon.reflect.visitor.filter.NamedElementFilter;
 import spoon.reflect.visitor.filter.TypeFilter;
 
 // shows how to test a transformation
@@ -29,7 +28,7 @@ public class OnTheFlyTransfoTest {
 	  l.addInputResource("src/test/resources/transformation/");
 	  l.buildModel();
 	  
-	  CtClass foo = (CtClass) l.getFactory().Package().getRootPackage().getElements(new NameFilter("Foo1")).get(0);
+	  CtClass foo = l.getFactory().Package().getRootPackage().getElements(new NamedElementFilter<>(CtClass.class, "Foo1")).get(0);
 
 	  // compiling and testing the initial class
 	  Class<?> fooClass = InMemoryJavaCompiler.compile(foo.getQualifiedName(), "package "+foo.getPackage().getQualifiedName()+";"+foo.toString());
