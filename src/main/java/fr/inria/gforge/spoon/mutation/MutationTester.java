@@ -143,7 +143,7 @@ public class MutationTester<T> {
 	public List<Class> compileMutants(List<CtClass> mutants) throws Exception {
 		List<Class> compiledMutants = new ArrayList<Class>();
 		for (CtClass mutantClass : mutants) {
-			Class<?> klass = InMemoryJavaCompiler.compile(
+			Class<?> klass = InMemoryJavaCompiler.newInstance().compile(
 					mutantClass.getQualifiedName(), "package "
 							+ mutantClass.getPackage().getQualifiedName() + ";"
 							+ mutantClass);
