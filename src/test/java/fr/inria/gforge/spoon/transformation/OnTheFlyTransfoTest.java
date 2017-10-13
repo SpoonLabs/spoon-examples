@@ -31,7 +31,7 @@ public class OnTheFlyTransfoTest {
 	  CtClass foo = l.getFactory().Package().getRootPackage().getElements(new NamedElementFilter<>(CtClass.class, "Foo1")).get(0);
 
 	  // compiling and testing the initial class
-	  Class<?> fooClass = InMemoryJavaCompiler.compile(foo.getQualifiedName(), "package "+foo.getPackage().getQualifiedName()+";"+foo.toString());
+	  Class<?> fooClass = InMemoryJavaCompiler.newInstance().compile(foo.getQualifiedName(), "package "+foo.getPackage().getQualifiedName()+";"+foo.toString());
 	  IFoo x = (IFoo) fooClass.newInstance();
 	  // testing its behavior
 	  assertEquals(5, x.m());
@@ -58,7 +58,7 @@ public class OnTheFlyTransfoTest {
 	  // second assertions on the behavior of the transformed code
 	  
 	  // compiling and testing the transformed class
-	  fooClass = InMemoryJavaCompiler.compile(foo.getQualifiedName(), "package "+foo.getPackage().getQualifiedName()+";"+foo.toString());
+	  fooClass = InMemoryJavaCompiler.newInstance().compile(foo.getQualifiedName(), "package "+foo.getPackage().getQualifiedName()+";"+foo.toString());
 	  IFoo y = (IFoo) fooClass.newInstance();
 	  // testing its behavior with subtraction
 	  assertEquals(1, y.m());
