@@ -4,20 +4,8 @@
 
 ## Introduction
 
-spoon-examples gives analysis and transformation processors showing the usage of the open-source library [Spoon](https://github.com/INRIA/spoon).
+This repository gives examples showing the usage of the open-source library [Spoon](https://github.com/INRIA/spoon).
+You can find in the directory [getting-started](/getting-started) a project example explaining how to use Spoon. 
 
-You can see these processors in:
-
-- [`src/main/java/fr/inria/gforge/spoon/analysis`](https://github.com/SpoonLabs/spoon-examples/tree/master/src/main/java/fr/inria/gforge/spoon/analysis) for analysis processors.
-- [`src/main/java/fr/inria/gforge/spoon/transformation`](https://github.com/SpoonLabs/spoon-examples/tree/master/src/main/java/fr/inria/gforge/spoon/transformation) for transformation processors.
-
-## Usage
-
-You can run the tests of the project with a `mvn test` command on the root of the project to execute all examples (all test classes).
-
-```console
-git clone https://github.com/SpoonLabs/spoon-examples.git
-cd spoon-examples
-mvn test
-```
+If you are looking for more examples of analysis and transformation processors, the directory [processors-and-transfo](/processors-and-transfo) gives more advanced examples.
 
