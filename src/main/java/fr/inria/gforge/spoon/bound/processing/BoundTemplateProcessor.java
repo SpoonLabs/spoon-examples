@@ -27,8 +27,8 @@ public class BoundTemplateProcessor extends AbstractAnnotationProcessor<Bound, C
 		// Apply transformation.
 		for (int i = apply.getStatements().size() - 1; i >= 0; i--) {
 			final CtStatement statement = apply.getStatement(i);
+			statement.delete();
 			e.getBody().insertBegin(statement);
-			statement.setParent(e.getBody());
 		}
 	}
 }
