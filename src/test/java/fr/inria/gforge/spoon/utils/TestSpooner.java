@@ -79,7 +79,7 @@ public class TestSpooner {
 		}
 
 		//   compiler.getFactory().getEnvironment().setPreserveLineNumbers(true);
-		compiler.setSourceOutputDirectory(dest);
+		compiler.getFactory().getEnvironment().setSourceOutputDirectory(dest);
 
 		compiler.generateProcessedSourceFiles(OutputType.COMPILATION_UNITS);
 		return this;
