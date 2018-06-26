@@ -41,7 +41,6 @@ public class TestSpoonCompiler extends JDTBasedSpoonCompiler {
 					throw new RuntimeException("Error creating output directory");
 				}
 			}
-			setSourceOutputDirectory(getSourceOutputDirectory().getCanonicalFile());
 			getFactory().getEnvironment().debugMessage(
 					"Generating source files to: " + getSourceOutputDirectory());
 
