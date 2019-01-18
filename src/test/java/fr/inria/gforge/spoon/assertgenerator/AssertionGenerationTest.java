@@ -59,7 +59,10 @@ public class AssertionGenerationTest {
 	private static String[] getPathToJunit() {
 		Process p = null;
 		try {
-			p = Runtime.getRuntime().exec("mvn dependency:build-classpath -Dmdep.outputFile=.cp");
+			if (System.getProperty("os.name").startsWith("Windows"))
+				p = Runtime.getRuntime().exec("cmd /C mvn dependency:build-classpath -Dmdep.outputFile=.cp");
+			else 
+				p = Runtime.getRuntime().exec("mvn dependency:build-classpath -Dmdep.outputFile=.cp");
 			Process finalP = p;
 			new Thread() {
 				@Override
