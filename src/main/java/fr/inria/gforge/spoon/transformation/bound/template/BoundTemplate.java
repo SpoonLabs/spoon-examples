@@ -1,4 +1,4 @@
-package fr.inria.gforge.spoon.bound.template;
+package fr.inria.gforge.spoon.transformation.bound.template;
 
 import spoon.reflect.code.CtStatement;
 import spoon.reflect.declaration.CtClass;

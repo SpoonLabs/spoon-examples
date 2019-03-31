@@ -15,7 +15,7 @@ public class NotNullCheckAdderProcessorTest {
 		final String[] args = {
 				"-i", "src/test/resources/src/",
 				"-o", "target/spooned/",
-				"-p", "fr.inria.gforge.spoon.transformation.NotNullCheckAdderProcessor",
+				"-p", "fr.inria.gforge.spoon.transformation.notnullcheck.NotNullCheckAdderProcessor",
 				"--compile"
 		};
 

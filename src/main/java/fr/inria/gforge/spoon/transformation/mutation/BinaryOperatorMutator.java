@@ -1,4 +1,4 @@
-package fr.inria.gforge.spoon.mutation;
+package fr.inria.gforge.spoon.transformation.mutation;
 
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.BinaryOperatorKind;

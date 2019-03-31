@@ -1,4 +1,4 @@
-package fr.inria.gforge.spoon.transformation;
+package fr.inria.gforge.spoon.transformation.autologging;
 
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.CtCodeSnippetStatement;

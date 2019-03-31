@@ -1,7 +1,7 @@
-package fr.inria.gforge.spoon.bound.processing;
+package fr.inria.gforge.spoon.transformation.bound.processing;
 
-import fr.inria.gforge.spoon.bound.annotation.Bound;
-import fr.inria.gforge.spoon.bound.template.BoundTemplate;
+import fr.inria.gforge.spoon.transformation.bound.annotation.Bound;
+import fr.inria.gforge.spoon.transformation.bound.template.BoundTemplate;
 import spoon.processing.AbstractAnnotationProcessor;
 import spoon.reflect.code.CtBlock;
 import spoon.reflect.code.CtStatement;

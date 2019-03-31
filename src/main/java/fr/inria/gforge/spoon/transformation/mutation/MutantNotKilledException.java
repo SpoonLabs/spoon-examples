@@ -1,4 +1,4 @@
-package fr.inria.gforge.spoon.mutation;
+package fr.inria.gforge.spoon.transformation.mutation;
 
 public class MutantNotKilledException extends RuntimeException {
 

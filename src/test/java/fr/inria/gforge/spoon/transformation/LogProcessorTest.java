@@ -14,7 +14,7 @@ public class LogProcessorTest {
 		final String[] args = {
 				"-i", "src/test/resources/src/",
 				"-o", "target/spooned/",
-				"-p", "fr.inria.gforge.spoon.transformation.LogProcessor",
+				"-p", "fr.inria.gforge.spoon.transformation.autologging.LogProcessor",
 				"--compile"
 		};
 

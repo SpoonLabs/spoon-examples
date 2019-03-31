@@ -1,6 +1,6 @@
-package fr.inria.gforge.spoon.bound.src;
+package fr.inria.gforge.spoon.transformation.bound.src;
 
-import fr.inria.gforge.spoon.bound.annotation.Bound;
+import fr.inria.gforge.spoon.transformation.bound.annotation.Bound;
 
 public class Main {
 

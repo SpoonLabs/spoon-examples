@@ -1,13 +1,12 @@
-package fr.inria.gforge.spoon.bound.processing;
+package fr.inria.gforge.spoon.transformation.bound.processing;
 
 import spoon.processing.AbstractAnnotationProcessor;
-import spoon.reflect.code.CtCodeSnippetExpression;
 import spoon.reflect.code.CtExpression;
 import spoon.reflect.code.CtIf;
 import spoon.reflect.code.CtThrow;
 import spoon.reflect.declaration.CtMethod;
 import spoon.reflect.declaration.CtParameter;
-import fr.inria.gforge.spoon.bound.annotation.Bound;
+import fr.inria.gforge.spoon.transformation.bound.annotation.Bound;
 
 /**
  * we only process method parameters (CtParameter) annotated with @Bound

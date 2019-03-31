@@ -1,10 +1,9 @@
-package fr.inria.gforge.spoon.mutation;
+package fr.inria.gforge.spoon.transformation.mutation;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.junit.Assert;
 import org.mdkt.compiler.InMemoryJavaCompiler;
 
 import spoon.Launcher;

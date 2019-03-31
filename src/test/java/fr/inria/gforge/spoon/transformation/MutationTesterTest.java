@@ -8,10 +8,10 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import spoon.reflect.declaration.CtClass;
-import fr.inria.gforge.spoon.mutation.BinaryOperatorMutator;
-import fr.inria.gforge.spoon.mutation.MutantNotKilledException;
-import fr.inria.gforge.spoon.mutation.MutationTester;
-import fr.inria.gforge.spoon.mutation.TestDriver;
+import fr.inria.gforge.spoon.transformation.mutation.BinaryOperatorMutator;
+import fr.inria.gforge.spoon.transformation.mutation.MutantNotKilledException;
+import fr.inria.gforge.spoon.transformation.mutation.MutationTester;
+import fr.inria.gforge.spoon.transformation.mutation.TestDriver;
 
 public class MutationTesterTest {
 
