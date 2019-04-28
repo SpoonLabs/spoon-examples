@@ -23,7 +23,7 @@ public class FactoryProcessor extends AbstractProcessor<CtConstructorCall<?>> {
 		if (newClass.getExecutable().getDeclaringType().isSubtypeOf(getFactoryType()))
 			return;
 		// skip creations in factories
-		if (((CtClass<?>) newClass.getParent(CtClass.class)).isSubtypeOf(getFactoryType()))
+		if (newClass.getParent(CtClass.class).isSubtypeOf(getFactoryType()))
 			return;
 		// only report for types created by the factory
 		for (CtTypeReference<?> t : getCreatedTypes()) {
