@@ -73,9 +73,10 @@ public class AssertionGenerationTest {
 				}
 			}.start();
 			p.waitFor();
-			BufferedReader buffer = new BufferedReader(new FileReader(".cp"));
-			final String classpath = buffer.lines().collect(Collectors.joining(System.getProperty("path.separator")));
-			buffer.close();
+			final String classpath;
+                    try (BufferedReader buffer = new BufferedReader(new FileReader(".cp"))) {
+                        classpath = buffer.lines().collect(Collectors.joining(System.getProperty("path.separator")));
+                    }
 			return classpath.split(System.getProperty("path.separator"));
 		} catch (Exception e) {
 			throw new RuntimeException(e);
