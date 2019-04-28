@@ -50,7 +50,7 @@ public class ReferenceProcessor extends AbstractProcessor<CtPackage> {
 				}
 			}
 		}
-		if (refs.size() > 0) {
+		if (!refs.isEmpty()) {
 			packRefs.put(pack, refs);
 		}
 	}

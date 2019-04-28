@@ -15,7 +15,7 @@ public class CatchProcessor extends AbstractProcessor<CtCatch> {
 
 	@Override
 	public boolean isToBeProcessed(CtCatch candidate) {
-		return candidate.getBody().getStatements().size() == 0;
+		return candidate.getBody().getStatements().isEmpty();
 	}
 
 	@Override
