@@ -29,10 +29,10 @@ public class MutationTester<T> {
 	private Processor mutator;
 	
 	/** the produced mutants */
-	private final List<CtClass> mutants = new ArrayList<CtClass>();
+	private final List<CtClass> mutants = new ArrayList<>();
 
 	// public for testing
-	public final List<T> mutantInstances = new ArrayList<T>();
+	public final List<T> mutantInstances = new ArrayList<>();
 
 	public MutationTester(String src, TestDriver tester, Processor mutator) {
 		this.sourceCodeToBeMutated = src;

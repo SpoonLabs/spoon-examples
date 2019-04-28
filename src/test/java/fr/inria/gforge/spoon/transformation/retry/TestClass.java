@@ -8,7 +8,7 @@ import java.util.Collection;
  */
 public class TestClass {
 
-	private Collection<Long> result = new ArrayList<Long>();
+	private Collection<Long> result = new ArrayList<>();
 
 	@RetryOnFailure(attempts = 3, delay = 10, verbose = false)
 	public void retry() {

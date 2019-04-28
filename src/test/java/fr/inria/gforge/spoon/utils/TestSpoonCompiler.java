@@ -44,7 +44,7 @@ public class TestSpoonCompiler extends JDTBasedSpoonCompiler {
 			getFactory().getEnvironment().debugMessage(
 					"Generating source files to: " + getSourceOutputDirectory());
 
-			List<File> printedFiles = new ArrayList<File>();
+			List<File> printedFiles = new ArrayList<>();
 			printing:
 			for (spoon.reflect.cu.CompilationUnit cu : getFactory().CompilationUnit()
 					.getMap().values()) {

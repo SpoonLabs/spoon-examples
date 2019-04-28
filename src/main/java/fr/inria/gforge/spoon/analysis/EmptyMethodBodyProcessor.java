@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class EmptyMethodBodyProcessor extends AbstractProcessor<CtMethod<?>> {
 
-	public final List<CtMethod> emptyMethods = new ArrayList<CtMethod>();
+	public final List<CtMethod> emptyMethods = new ArrayList<>();
 	public void process(CtMethod<?> element) {
 		if (element.getParent(CtClass.class) != null && !element.getModifiers().contains(ModifierKind.ABSTRACT) && element.getBody().getStatements().size() == 0) {
 			emptyMethods.add(element);

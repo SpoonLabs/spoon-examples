@@ -35,7 +35,7 @@ public class FactoryProcessorTest {
 		final FactoryProcessor processor = new FactoryProcessor(listFactoryItf.get(0).getReference());
 		processingManager.addProcessor(processor);
 
-		List<CtConstructorCall> ctNewClasses = factory.getModel().getElements(new TypeFilter<CtConstructorCall>(CtConstructorCall.class));
+		List<CtConstructorCall> ctNewClasses = factory.getModel().getElements(new TypeFilter<>(CtConstructorCall.class));
 		processingManager.process(ctNewClasses);
 
 		// implicit constructor is also counted

@@ -15,7 +15,7 @@ import java.util.List;
  * Reports warnings when undocumented elements are found.
  */
 public class DocProcessor extends AbstractProcessor<CtElement> {
-	public final List<CtElement> undocumentedElements = new ArrayList<CtElement>();
+	public final List<CtElement> undocumentedElements = new ArrayList<>();
 
 	public void process(CtElement element) {
 		if (element instanceof CtNamedElement || element instanceof CtField || element instanceof CtExecutable) {

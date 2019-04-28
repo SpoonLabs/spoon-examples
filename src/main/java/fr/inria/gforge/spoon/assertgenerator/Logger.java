@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class Logger {
 
-	public static Map<String, Object> observations = new HashMap<String, Object>();
+	public static Map<String, Object> observations = new HashMap<>();
 
 	public static void observe(String name, Object object) {
 		observations.put(name, object);

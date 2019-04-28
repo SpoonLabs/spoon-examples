@@ -11,7 +11,7 @@ import java.util.List;
 
 public class FactoryProcessor extends AbstractProcessor<CtConstructorCall<?>> {
 
-	public List<CtConstructorCall> listWrongUses = new ArrayList<CtConstructorCall>();
+	public List<CtConstructorCall> listWrongUses = new ArrayList<>();
 	private CtTypeReference factoryTypeRef;
 
 	public FactoryProcessor(CtTypeReference factoryTypeRef) {
