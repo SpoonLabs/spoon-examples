@@ -20,7 +20,7 @@ public class BoundTemplateProcessor extends AbstractAnnotationProcessor<Bound, C
 		}
 
 		// Use template.
-		CtClass<?> type = (CtClass<?>) e.getParent(CtClass.class);
+		CtClass<?> type = e.getParent(CtClass.class);
 		Template t = new BoundTemplate(getFactory().Type().createReference(Double.class), element.getSimpleName(), annotation.min(), annotation.max());
 		final CtBlock apply = (CtBlock) t.apply(type);
 

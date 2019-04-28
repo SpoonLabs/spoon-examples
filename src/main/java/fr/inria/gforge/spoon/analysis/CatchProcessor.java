@@ -11,11 +11,11 @@ import java.util.List;
  * Reports warnings when empty catch blocks are found.
  */
 public class CatchProcessor extends AbstractProcessor<CtCatch> {
-	public final List<CtCatch> emptyCatchs = new ArrayList<CtCatch>();
+	public final List<CtCatch> emptyCatchs = new ArrayList<>();
 
 	@Override
 	public boolean isToBeProcessed(CtCatch candidate) {
-		return candidate.getBody().getStatements().size() == 0;
+		return candidate.getBody().getStatements().isEmpty();
 	}
 
 	@Override

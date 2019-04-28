@@ -14,13 +14,8 @@ import java.util.List;
  */
 class TestListener extends RunListener {
 
-    private List<Description> testRun;
-    private List<Failure> testFails;
-
-    TestListener() {
-        this.testRun = new ArrayList<>();
-        this.testFails = new ArrayList<>();
-    }
+    private final List<Description> testRun = new ArrayList<>();
+    private final List<Failure> testFails = new ArrayList<>();
 
     @Override
     public synchronized void testFinished(Description description) throws Exception {

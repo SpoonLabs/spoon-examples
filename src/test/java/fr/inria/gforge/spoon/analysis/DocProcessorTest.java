@@ -7,7 +7,6 @@ import spoon.reflect.factory.Factory;
 import spoon.support.QueueProcessingManager;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 public class DocProcessorTest {

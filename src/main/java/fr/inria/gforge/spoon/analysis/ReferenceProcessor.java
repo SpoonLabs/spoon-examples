@@ -18,15 +18,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
-import java.util.TreeSet;
 
 /**
  * Finds circular dependencies between packages
  */
 public class ReferenceProcessor extends AbstractProcessor<CtPackage> {
 
-	private List<CtTypeReference<?>> ignoredTypes = new ArrayList<CtTypeReference<?>>();
-	public List<List<CtPackageReference>> circularPathes = new ArrayList<List<CtPackageReference>>();
+	private List<CtTypeReference<?>> ignoredTypes = new ArrayList<>();
+	public List<List<CtPackageReference>> circularPathes = new ArrayList<>();
 
 	@Override
 	public void init() {
@@ -35,13 +34,13 @@ public class ReferenceProcessor extends AbstractProcessor<CtPackage> {
 		ignoredTypes.add(getFactory().Type().createReference(FactoryAccessor.class));
 	}
 
-	Map<CtPackageReference, Set<CtPackageReference>> packRefs = new HashMap<CtPackageReference, Set<CtPackageReference>>();
+	Map<CtPackageReference, Set<CtPackageReference>> packRefs = new HashMap<>();
 
 	public void process(CtPackage element) {
 		CtPackageReference pack = element.getReference();
-		Set<CtPackageReference> refs = new HashSet<CtPackageReference>();
+		Set<CtPackageReference> refs = new HashSet<>();
 		for (CtType t : element.getTypes()) {
-			List<CtTypeReference<?>> listReferences = Query.getReferences(t, new ReferenceTypeFilter<CtTypeReference<?>>(CtTypeReference.class));
+			List<CtTypeReference<?>> listReferences = Query.getReferences(t, new ReferenceTypeFilter<>(CtTypeReference.class));
 
 			for (CtTypeReference<?> tref : listReferences) {
 				if (tref.getPackage() != null && !tref.getPackage().equals(pack)) {
@@ -51,7 +50,7 @@ public class ReferenceProcessor extends AbstractProcessor<CtPackage> {
 				}
 			}
 		}
-		if (refs.size() > 0) {
+		if (!refs.isEmpty()) {
 			packRefs.put(pack, refs);
 		}
 	}
@@ -59,13 +58,13 @@ public class ReferenceProcessor extends AbstractProcessor<CtPackage> {
 	@Override
 	public void processingDone() {
 		for (CtPackageReference p : packRefs.keySet()) {
-			Stack<CtPackageReference> path = new Stack<CtPackageReference>();
+			Stack<CtPackageReference> path = new Stack<>();
 			path.push(p);
 			scanDependencies(path);
 		}
 	}
 
-	Set<CtPackageReference> scanned = new HashSet<CtPackageReference>();
+	Set<CtPackageReference> scanned = new HashSet<>();
 
 	void scanDependencies(Stack<CtPackageReference> path) {
 		CtPackageReference ref = path.peek();
@@ -78,7 +77,7 @@ public class ReferenceProcessor extends AbstractProcessor<CtPackage> {
 		if (refs != null) {
 			for (CtPackageReference p : refs) {
 				if (path.contains(p)) {
-					List<CtPackageReference> circularPath = new ArrayList<CtPackageReference>(
+					List<CtPackageReference> circularPath = new ArrayList<>(
 							path.subList(path.indexOf(p), path.size()));
 					circularPath.add(p);
 

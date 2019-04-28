@@ -34,7 +34,7 @@ public class MutationTesterTest {
 		BinaryOperatorMutator mutationOperator = new BinaryOperatorMutator();
 
 		// we instantiate the mutation tester
-		MutationTester<IFoo> mutationTester = new MutationTester<IFoo>(codeToBeMutated, testDriverForIFooObjects, mutationOperator);
+		MutationTester<IFoo> mutationTester = new MutationTester<>(codeToBeMutated, testDriverForIFooObjects, mutationOperator);
 		
 		// generating the mutants
 		mutationTester.generateMutants();

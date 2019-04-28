@@ -63,7 +63,7 @@ public class TestSpooner {
 		// Build spoon model
 		compiler.build();
 		
-		List<Processor<?>> processorsNames = new ArrayList<Processor<?>>();
+		List<Processor<?>> processorsNames = new ArrayList<>();
 		for (Class<? extends Processor> processor : processors) {
 			processorsNames.add(processor.newInstance());
 		}

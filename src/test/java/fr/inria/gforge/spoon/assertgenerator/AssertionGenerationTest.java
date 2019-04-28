@@ -5,19 +5,15 @@ import fr.inria.gforge.spoon.assertgenerator.workflow.AssertionAdder;
 import fr.inria.gforge.spoon.assertgenerator.workflow.Collector;
 import org.junit.Test;
 import spoon.Launcher;
-import spoon.reflect.code.CtInvocation;
 import spoon.reflect.code.CtLocalVariable;
-import spoon.reflect.code.CtVariableAccess;
 import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtMethod;
-import spoon.reflect.reference.CtExecutableReference;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 
@@ -77,11 +73,12 @@ public class AssertionGenerationTest {
 				}
 			}.start();
 			p.waitFor();
-			BufferedReader buffer = new BufferedReader(new FileReader(".cp"));
-			final String classpath = buffer.lines().collect(Collectors.joining(System.getProperty("path.separator")));
-			buffer.close();
+			final String classpath;
+                    try (BufferedReader buffer = new BufferedReader(new FileReader(".cp"))) {
+                        classpath = buffer.lines().collect(Collectors.joining(System.getProperty("path.separator")));
+                    }
 			return classpath.split(System.getProperty("path.separator"));
-		} catch (Exception e) {
+		} catch (IOException | InterruptedException e) {
 			throw new RuntimeException(e);
 		}
 

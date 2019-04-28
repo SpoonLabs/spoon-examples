@@ -30,14 +30,15 @@ public class SpoonClassLoader extends ClassLoader {
 				return super.loadClass(name);
 			}
 
-			InputStream input = new FileInputStream(file);
-			ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-			int data = input.read();
-			while (data != -1) {
-				buffer.write(data);
-				data = input.read();
-			}
-			input.close();
+                        ByteArrayOutputStream buffer;
+                    try (InputStream input = new FileInputStream(file)) {
+                        buffer = new ByteArrayOutputStream();
+                        int data = input.read();
+                        while (data != -1) {
+                            buffer.write(data);
+                            data = input.read();
+                        }
+                    }
 			byte[] classData = buffer.toByteArray();
 
 			return defineClass(name, classData, 0, classData.length);

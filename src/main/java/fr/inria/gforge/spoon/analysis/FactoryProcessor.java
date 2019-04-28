@@ -2,9 +2,7 @@ package fr.inria.gforge.spoon.analysis;
 
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.CtConstructorCall;
-import spoon.reflect.code.CtNewClass;
 import spoon.reflect.declaration.CtClass;
-import spoon.reflect.declaration.CtType;
 import spoon.reflect.reference.CtExecutableReference;
 import spoon.reflect.reference.CtTypeReference;
 
@@ -13,7 +11,7 @@ import java.util.List;
 
 public class FactoryProcessor extends AbstractProcessor<CtConstructorCall<?>> {
 
-	public List<CtConstructorCall> listWrongUses = new ArrayList<CtConstructorCall>();
+	public List<CtConstructorCall> listWrongUses = new ArrayList<>();
 	private CtTypeReference factoryTypeRef;
 
 	public FactoryProcessor(CtTypeReference factoryTypeRef) {
@@ -25,7 +23,7 @@ public class FactoryProcessor extends AbstractProcessor<CtConstructorCall<?>> {
 		if (newClass.getExecutable().getDeclaringType().isSubtypeOf(getFactoryType()))
 			return;
 		// skip creations in factories
-		if (((CtClass<?>) newClass.getParent(CtClass.class)).isSubtypeOf(getFactoryType()))
+		if (newClass.getParent(CtClass.class).isSubtypeOf(getFactoryType()))
 			return;
 		// only report for types created by the factory
 		for (CtTypeReference<?> t : getCreatedTypes()) {

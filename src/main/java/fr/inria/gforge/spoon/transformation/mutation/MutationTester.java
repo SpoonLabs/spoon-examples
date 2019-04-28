@@ -29,10 +29,10 @@ public class MutationTester<T> {
 	private Processor mutator;
 	
 	/** the produced mutants */
-	private final List<CtClass> mutants = new ArrayList<CtClass>();
+	private final List<CtClass> mutants = new ArrayList<>();
 
 	// public for testing
-	public final List<T> mutantInstances = new ArrayList<T>();
+	public final List<T> mutantInstances = new ArrayList<>();
 
 	public MutationTester(String src, TestDriver tester, Processor mutator) {
 		this.sourceCodeToBeMutated = src;
@@ -92,11 +92,11 @@ public class MutationTester<T> {
 	
 	private void replace(CtElement e, CtElement op) {
 		if (e instanceof CtStatement  && op instanceof CtStatement) {
-			((CtStatement)e).replace((CtStatement) op);			
+			e.replace(op);
 			return;
 		}
 		if (e instanceof CtExpression && op instanceof CtExpression) {
-			((CtExpression)e).replace((CtExpression) op);
+			e.replace(op);
 			return;
 		}
 		throw new IllegalArgumentException(e.getClass()+" "+op.getClass());
@@ -105,7 +105,7 @@ public class MutationTester<T> {
 	/** tries to kill all generated mutants, throws an AssertionError if one mutant is not killed */
 	public void killMutants() throws Exception {
 		
-		List<Class> compiledMutants = compileMutants(mutants);
+		List<Class<?>> compiledMutants = compileMutants(mutants);
 
 		List<T> mutantInstances = instantiateMutants(compiledMutants);
 
@@ -127,7 +127,7 @@ public class MutationTester<T> {
 	}
 
 	/** instantiate the mutant classes using the default zero-arg constructor */
-	public List<T> instantiateMutants(List<Class> compiledMutants)
+	public List<T> instantiateMutants(List<Class<?>> compiledMutants)
 			throws Exception {
 		// we run each mutant one by one and check whether they are killed
 
@@ -139,8 +139,8 @@ public class MutationTester<T> {
 	}
 
 	/** compiles the mutants on the fly */
-	public List<Class> compileMutants(List<CtClass> mutants) throws Exception {
-		List<Class> compiledMutants = new ArrayList<Class>();
+	public List<Class<?>> compileMutants(List<CtClass> mutants) throws Exception {
+		List<Class<?>> compiledMutants = new ArrayList<>();
 		for (CtClass mutantClass : mutants) {
 			Class<?> klass = InMemoryJavaCompiler.newInstance().compile(
 					mutantClass.getQualifiedName(), "package "
