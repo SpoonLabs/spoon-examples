@@ -37,7 +37,7 @@ public class RetryTest {
 		try {
 			clz.getMethod("retry").invoke(instance);
 			Assert.fail("retry method should always fail");
-		} catch (Exception ex) {
+		} catch (ReflectiveOperationException | IllegalArgumentException | SecurityException ex) {
 			// always fail
 		}
 		Field field = clz.getDeclaredField("result");

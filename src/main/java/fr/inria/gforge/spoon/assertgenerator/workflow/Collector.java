@@ -17,6 +17,7 @@ import java.util.List;
 import static fr.inria.gforge.spoon.assertgenerator.Util.getGetters;
 import static fr.inria.gforge.spoon.assertgenerator.Util.getKey;
 import static fr.inria.gforge.spoon.assertgenerator.Util.invok;
+import java.net.MalformedURLException;
 
 /**
  * Created by Benjamin DANGLOT
@@ -32,9 +33,9 @@ public class Collector {
 	}
 
 	public void collect(Launcher launcher, CtMethod<?> testMethod, List<CtLocalVariable> localVariables) {
-		final CtClass testClass = testMethod.getParent(CtClass.class);
+		CtClass testClass = testMethod.getParent(CtClass.class);
 		testClass.removeMethod(testMethod);
-		final CtMethod<?> clone = testMethod.clone();
+		CtMethod<?> clone = testMethod.clone();
 		instrument(clone, localVariables);
 		testClass.addMethod(clone);
 		System.out.println(clone);
@@ -44,13 +45,13 @@ public class Collector {
 	}
 
 	public void run(Launcher launcher, CtClass testClass, CtMethod<?> clone) {
-		final String fullQualifiedName = testClass.getQualifiedName();
-		final String testMethodName = clone.getSimpleName();
+		String fullQualifiedName = testClass.getQualifiedName();
+		String testMethodName = clone.getSimpleName();
 		try {
 			final SpoonModelBuilder compiler = launcher.createCompiler();
 			compiler.compile(SpoonModelBuilder.InputType.CTTYPES);
 			TestRunner.runTest(fullQualifiedName, testMethodName, new String[]{"spooned-classes"});
-		} catch (Exception e) {
+		} catch (ClassNotFoundException | MalformedURLException e) {
 			throw new RuntimeException(e);
 		}
 	}

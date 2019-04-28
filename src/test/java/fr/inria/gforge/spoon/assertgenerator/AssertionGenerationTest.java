@@ -78,7 +78,7 @@ public class AssertionGenerationTest {
                         classpath = buffer.lines().collect(Collectors.joining(System.getProperty("path.separator")));
                     }
 			return classpath.split(System.getProperty("path.separator"));
-		} catch (Exception e) {
+		} catch (IOException | InterruptedException e) {
 			throw new RuntimeException(e);
 		}
 
