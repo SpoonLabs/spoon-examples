@@ -2,9 +2,7 @@ package fr.inria.gforge.spoon.analysis;
 
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.CtConstructorCall;
-import spoon.reflect.code.CtNewClass;
 import spoon.reflect.declaration.CtClass;
-import spoon.reflect.declaration.CtType;
 import spoon.reflect.reference.CtExecutableReference;
 import spoon.reflect.reference.CtTypeReference;
 

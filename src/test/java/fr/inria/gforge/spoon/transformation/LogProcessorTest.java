@@ -1,12 +1,8 @@
 package fr.inria.gforge.spoon.transformation;
 
-import org.eclipse.jdt.internal.compiler.batch.Main;
 import org.junit.Test;
 import spoon.Launcher;
 
-import java.io.PrintWriter;
-
-import static org.junit.Assert.assertTrue;
 
 public class LogProcessorTest {
 	@Test

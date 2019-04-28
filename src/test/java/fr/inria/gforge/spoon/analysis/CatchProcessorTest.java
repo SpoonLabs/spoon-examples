@@ -6,9 +6,6 @@ import spoon.Launcher;
 import spoon.processing.ProcessingManager;
 import spoon.reflect.factory.Factory;
 import spoon.support.QueueProcessingManager;
-import spoon.support.compiler.FileSystemFolder;
-
-import java.io.File;
 
 import static org.junit.Assert.assertEquals;
 

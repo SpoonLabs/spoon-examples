@@ -18,7 +18,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
-import java.util.TreeSet;
 
 /**
  * Finds circular dependencies between packages
