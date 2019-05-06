@@ -10,6 +10,7 @@ import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtMethod;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
@@ -53,19 +54,21 @@ public class AssertionGenerationTest {
 	}
 
 	private static String[] getPathToJunit() {
-		Process p = null;
+		File file = new File(".cp");
 		try {
-			if (System.getProperty("os.name").startsWith("Windows"))
-				p = Runtime.getRuntime().exec("cmd /C mvn dependency:build-classpath -Dmdep.outputFile=.cp");
-			else 
-				p = Runtime.getRuntime().exec("mvn dependency:build-classpath -Dmdep.outputFile=.cp");
-			Process finalP = p;
+			final String cmd;
+			if (System.getProperty("os.name").startsWith("Windows")) {
+				cmd = "cmd /C mvn dependency:build-classpath -Dmdep.outputFile=.cp";
+			} else {
+				cmd = "mvn dependency:build-classpath -Dmdep.outputFile=.cp";
+			}
+			Process p = Runtime.getRuntime().exec(cmd);
 			new Thread() {
 				@Override
 				public void run() {
-					while (finalP.isAlive()) {
+					while (p.isAlive()) {
 						try {
-							System.out.print((char) finalP.getInputStream().read());
+							System.out.print((char) p.getInputStream().read());
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
@@ -74,9 +77,10 @@ public class AssertionGenerationTest {
 			}.start();
 			p.waitFor();
 			final String classpath;
-                    try (BufferedReader buffer = new BufferedReader(new FileReader(".cp"))) {
-                        classpath = buffer.lines().collect(Collectors.joining(System.getProperty("path.separator")));
-                    }
+			try (BufferedReader buffer = new BufferedReader(new FileReader(file))) {
+				classpath = buffer.lines().collect(Collectors.joining(System.getProperty("path.separator")));
+			}
+			file.delete();
 			return classpath.split(System.getProperty("path.separator"));
 		} catch (IOException | InterruptedException e) {
 			throw new RuntimeException(e);
