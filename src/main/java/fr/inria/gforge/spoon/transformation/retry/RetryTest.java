@@ -21,7 +21,7 @@ public class RetryTest {
 	@Before
 	public void setUp() throws Exception {
 		spooner = new TestSpooner()
-				.addSource(new File("src/test/java/" + TEST_CLASS.replaceAll("\\.", "/") + ".java"))
+				.addSource(new File("src/main/java/" + TEST_CLASS.replaceAll("\\.", "/") + ".java"))
 				.addTemplate(
 						new File("src/main/java/" + RetryTemplate.class.getName().replaceAll("\\.", "/") + ".java"));
 	}
