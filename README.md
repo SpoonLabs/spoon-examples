@@ -10,6 +10,8 @@ You can see these processors in:
 
 - [`src/main/java/fr/inria/gforge/spoon/analysis`](https://github.com/SpoonLabs/spoon-examples/tree/master/src/main/java/fr/inria/gforge/spoon/analysis) for analysis processors.
 - [`src/main/java/fr/inria/gforge/spoon/transformation`](https://github.com/SpoonLabs/spoon-examples/tree/master/src/main/java/fr/inria/gforge/spoon/transformation) for transformation processors.
+- [`src/main/java/fr/inria/gforge/spoon/spoonerism`](https://github.com/SpoonLabs/spoon-examples/tree/master/src/main/java/fr/inria/gforge/spoon/transformation) a basic example of transforming classes to extend a common parent class.  Accompanied by the [spoonerism.fodp](https://github.com/SpoonLabs/spoon-examples/blob/master/docs/spoonerism.fodp) presentation.
+
 
 ## Usage
 
