@@ -23,8 +23,8 @@ import java.util.List;
  * class that all other test classes extend.
  */
 class Spoonerism {
-    String IN_DIR = "src/test/java/";
-    String OUT_DIR = "src/out/java/";
+    String IN_DIR = "src/main/java/";
+    String OUT_DIR = "target/spoonerism/";
     // Main API - main place to go into spoon
     SpoonAPI spoonUniverse;
     // place to put temporary results between invocations
