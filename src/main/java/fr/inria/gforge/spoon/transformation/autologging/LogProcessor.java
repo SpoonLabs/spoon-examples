@@ -5,6 +5,15 @@ import spoon.reflect.code.CtCodeSnippetStatement;
 import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtExecutable;
 
+/**
+ * Example of tracing
+ *
+ * Use with
+ * $ java -jar spoon.jar -i src/main/java -o spooned -p fr.inria.gforge.spoon.transformation.autologging.LogProcessor
+ *
+ * Of with https://github.com/SpoonLabs/spoon-maven-plugin
+ * 
+ */
 public class LogProcessor extends AbstractProcessor<CtExecutable> {
 
 	@Override
