@@ -32,7 +32,7 @@ public class TracingTest {
             }
             @Override
             public boolean isToBeProcessed(CtMethod element) {
-                // log all method that have a REST (javax.ws.rs) annotation
+                // log all methods that have a REST (javax.ws.rs) annotation
                 CtAnnotation<? extends Annotation> annotation = getRESTAnnotation(element);
                 return annotation != null;
             }
