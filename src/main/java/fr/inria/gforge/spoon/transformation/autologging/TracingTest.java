@@ -39,6 +39,7 @@ public class TracingTest {
 
             @Override
             public void process(CtMethod element) {
+                // add the call to the tracing method at the beginning of the method
                 element.getBody().insertBegin(getFactory().createCodeSnippetStatement("System.out.println(\"Trace " + element.getSignature() + "\")"));
             }
         });
