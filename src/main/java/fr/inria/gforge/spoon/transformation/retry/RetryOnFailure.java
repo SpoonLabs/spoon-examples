@@ -6,11 +6,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * This annotation is inspirited by JCabi retry annotation.
+ * Methods annotated with @RetryOnFailure will be re-executed three times
+ *
+ * Annotation inspired by JCabi retry annotation.
  * 
  * http://aspects.jcabi.com/annotation-retryonfailure.html
  *
- * Created by nicolas on 22/01/2015.
+ * Created by Nicolas Petitprez on 22/01/2015.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
