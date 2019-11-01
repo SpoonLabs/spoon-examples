@@ -8,6 +8,16 @@ import spoon.reflect.declaration.CtExecutable;
 /**
  * Example of tracing
  *
+ * class A{
+ *   void m(Object o} { ...(method body) .... }
+ * }
+ *
+ * is transformed into
+ *
+ *  void m(Object o} {
+ *      System.out.println("enter in method m from class A");
+ *      // rest of the method body
+ *  }
  * Use with
  * $ java -jar spoon.jar -i src/main/java -o spooned -p fr.inria.gforge.spoon.transformation.autologging.LogProcessor
  *
@@ -21,7 +31,7 @@ public class LogProcessor extends AbstractProcessor<CtExecutable> {
 		CtCodeSnippetStatement snippet = getFactory().Core().createCodeSnippetStatement();
 
 		// Snippet which contains the log.
-		final String value = String.format("System.out.println(\"Enter in the method %s from the class %s\");",
+		final String value = String.format("System.out.println(\"Enter in the method %s from class %s\");",
 				element.getSimpleName(),
 				element.getParent(CtClass.class).getSimpleName());
 		snippet.setValue(value);

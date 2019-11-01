@@ -11,7 +11,17 @@ import fr.inria.gforge.spoon.transformation.bound.annotation.Bound;
 /**
  * we only process method parameters (CtParameter) annotated with @Bound
  *
- * @author petitpre
+ * void m(@Bound(min = 2d, max = 8d) int a) { ...(method body) .... }
+ *
+ * is transformed into
+ *
+ *  void m(int a} {
+ *      if (a < 2d) { throw new RuntimeException("out of min bound (a < 2d)"); }
+ *      if (a > 8d) { throw new RuntimeException("out of min bound (a > 8d)"); }
+ *      // rest of the method body
+ *  }
+ *  
+ * @author Nicolas Petitprez
  */
 public class BoundProcessor extends AbstractAnnotationProcessor<Bound, CtParameter<?>> {
 	public void process(Bound annotation, CtParameter<?> element) {
