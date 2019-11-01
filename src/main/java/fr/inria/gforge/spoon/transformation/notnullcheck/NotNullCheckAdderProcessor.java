@@ -8,6 +8,15 @@ import spoon.reflect.declaration.CtParameter;
 /**
  * Adds a not-null check for all method parameters which are objects
  *
+ * void m(Object o} { ...(method body) .... }
+ *
+ * is transformed into
+ *
+ *  void m(Object o} {
+ *      if (o == null) { throw new IllegalArgumentException("o is null"); }
+ *      // rest of the method body
+ *  }
+ *
  * @author Martin Monperrus
  */
 public class NotNullCheckAdderProcessor extends AbstractProcessor<CtParameter<?>> {

@@ -20,7 +20,7 @@ public class CatchProcessor extends AbstractProcessor<CtCatch> {
 
 	@Override
 	public void process(CtCatch element) {
-		getEnvironment().report(this, Level.WARN, element, "empty catch clause");
+		getEnvironment().report(this, Level.WARN, element, "empty catch clause " + element.getPosition().toString());
 		emptyCatchs.add(element);
 	}
 }
