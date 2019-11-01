@@ -20,7 +20,7 @@ import fr.inria.gforge.spoon.transformation.bound.annotation.Bound;
  *      if (a > 8d) { throw new RuntimeException("out of min bound (a > 8d)"); }
  *      // rest of the method body
  *  }
- *  
+ *
  * @author Nicolas Petitprez
  */
 public class BoundProcessor extends AbstractAnnotationProcessor<Bound, CtParameter<?>> {
