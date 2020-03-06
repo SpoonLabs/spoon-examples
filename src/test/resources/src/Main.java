@@ -23,5 +23,14 @@ public class Main {
 	}
 
 	public void m(C c) throws Exception {
+		c.toString();
+	}
+
+	public void m5(Object c) throws Exception {
+		c.toString();
+	}
+
+	public void m6(Object d) throws Exception {
+		d.toString();
 	}
 }
