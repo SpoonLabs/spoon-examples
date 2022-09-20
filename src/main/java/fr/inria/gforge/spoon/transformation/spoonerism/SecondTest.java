@@ -1,4 +1,4 @@
-package fr.inria.gforge.spoon.spoonerism;
+package fr.inria.gforge.spoon.transformation.spoonerism;
 
 import java.util.Locale;
 
