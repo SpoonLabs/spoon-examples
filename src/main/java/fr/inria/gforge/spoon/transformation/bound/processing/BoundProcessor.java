@@ -17,7 +17,7 @@ import fr.inria.gforge.spoon.transformation.bound.annotation.Bound;
  *
  *  void m(int a} {
  *      if (a < 2d) { throw new RuntimeException("out of min bound (a < 2d)"); }
- *      if (a > 8d) { throw new RuntimeException("out of min bound (a > 8d)"); }
+ *      if (a > 8d) { throw new RuntimeException("out of max bound (a > 8d)"); }
  *      // rest of the method body
  *  }
  *
