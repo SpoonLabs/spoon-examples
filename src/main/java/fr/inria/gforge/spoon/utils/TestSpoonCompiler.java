@@ -81,8 +81,7 @@ public class TestSpoonCompiler extends JDTBasedSpoonCompiler {
 				file.createNewFile();
 
 				// the path must be given relatively to to the working directory
-				InputStream is = getCompilationUnitInputStream(cu.getFile()
-						.getPath());
+				InputStream is = getCompilationUnitInputStream(cu);
 
 				IOUtils.copy(is, new FileOutputStream(file));
 

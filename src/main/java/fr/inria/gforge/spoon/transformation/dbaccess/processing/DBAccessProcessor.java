@@ -3,13 +3,13 @@ package fr.inria.gforge.spoon.transformation.dbaccess.processing;
 import fr.inria.gforge.spoon.transformation.dbaccess.annotation.DBAccess;
 import fr.inria.gforge.spoon.transformation.dbaccess.annotation.DBType;
 import fr.inria.gforge.spoon.transformation.dbaccess.template.DBCodeTemplate;
-import org.apache.log4j.Level;
 import spoon.processing.AbstractAnnotationProcessor;
 import spoon.reflect.code.CtStatement;
 import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtConstructor;
 import spoon.reflect.declaration.CtMethod;
 import spoon.reflect.factory.Factory;
+import spoon.support.Level;
 import spoon.template.Substitution;
 
 public class DBAccessProcessor extends

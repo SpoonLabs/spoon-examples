@@ -10,8 +10,8 @@ public class ProcessorMainTest {
         String projectPath = ".";
 
         MavenLauncher launcher = new MavenLauncher(projectPath, MavenLauncher.SOURCE_TYPE.APP_SOURCE);
-
         Environment environment = launcher.getEnvironment();
+        environment.setNoClasspath(true);
         environment.setCommentEnabled(true);
         environment.setAutoImports(true);
 
