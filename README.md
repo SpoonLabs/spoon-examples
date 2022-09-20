@@ -6,9 +6,12 @@ spoon-examples gives analysis and transformation processors showing the usage of
 
 You can see these processors in:
 
-- [`src/main/java/fr/inria/gforge/spoon/analysis`](https://github.com/SpoonLabs/spoon-examples/tree/master/src/main/java/fr/inria/gforge/spoon/analysis) for analysis processors.
-- [`src/main/java/fr/inria/gforge/spoon/transformation`](https://github.com/SpoonLabs/spoon-examples/tree/master/src/main/java/fr/inria/gforge/spoon/transformation) for transformation processors.
-- [`src/main/java/fr/inria/gforge/spoon/spoonerism`](https://github.com/SpoonLabs/spoon-examples/tree/master/src/main/java/fr/inria/gforge/spoon/transformation) a basic example of transforming classes to extend a common parent class.  Accompanied by the [spoonerism.fodp](https://github.com/SpoonLabs/spoon-examples/blob/master/docs/spoonerism.fodp) presentation.
+- [`src/main/java/fr/inria/gforge/spoon/analysis`](https://github.com/SpoonLabs/spoon-examples/tree/master/src/main/java/fr/inria/gforge/spoon/analysis) for analysis.
+- [`src/main/java/fr/inria/gforge/spoon/transformation`](https://github.com/SpoonLabs/spoon-examples/tree/master/src/main/java/fr/inria/gforge/spoon/transformation) for transformation.
+  - [notnullcheck](https://github.com/SpoonLabs/spoon-examples/tree/master/src/main/java/fr/inria/gforge/spoon/transformation/notnullcheck) improves reliability
+  - [bound](https://github.com/SpoonLabs/spoon-examples/tree/master/src/main/java/fr/inria/gforge/spoon/transformation/bound) is a transformation based on annotations
+  - [mutation](https://github.com/SpoonLabs/spoon-examples/tree/master/src/main/java/fr/inria/gforge/spoon/transformation/mutation) is a simple mutation testing engine
+  - [spoonerism](https://github.com/SpoonLabs/spoon-examples/tree/master/src/main/java/fr/inria/gforge/spoon/transformation/spoonerism) a basic example of transforming classes to extend a common parent class.  Accompanied by the [spoonerism.fodp](https://github.com/SpoonLabs/spoon-examples/blob/master/docs/spoonerism.fodp) presentation.
 
 
 ## Usage
